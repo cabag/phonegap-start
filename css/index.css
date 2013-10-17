@@ -1,5 +1,12 @@
+h1 {
+	margin-bottom:0;
+	margin-top: 0.3em;
+	font-size:1.2em;
+}
+
 .ui-page ul#navigation {
 	padding-left:0;
+	margin-top: 0;
 }
 
 .ui-page ul#navigation li {
@@ -9,6 +16,10 @@
 
 .ui-page ul#navigation li a {
 	margin:0;
+}
+
+.ui-page ul#navigation li a .ui-btn-inner {
+	border:none;
 }
 
 #gyro {
