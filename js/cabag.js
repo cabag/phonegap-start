@@ -3,15 +3,25 @@ function lookup_location() {
 }
 
 function showGeo(loc) {
-  $("#geo-wrapper").css({'width':'320px','height':'350px'});
-  var map = new GMap2(document.getElementById("geo-wrapper"));
-  var center = new GLatLng(loc.coords.latitude, loc.coords.longitude);
-  map.setCenter(center, 14);
-  map.addControl(new GSmallMapControl());
-  map.addControl(new GMapTypeControl());
-  map.addOverlay(new GMarker(center, {draggable: false, title: "You are here (more or less)"}));
+  $("#geo").html("lat: " + loc.coords.latitude + " long: " + loc.coords.longitude);
 }
 
 function showGeoError() {
-  $("#live-geolocation").html('Unable to determine your location.');
+  $("#geo").html('Unable to determine your location.');
 }
+
+$( document ).ready(function() {
+
+	$("#geo").hide();
+	$("#gyro").hide();
+	
+	lookup_location();
+	
+	$("#navigation li a").click(function() {
+			//console.log("id: "+$(this).attr("href"));
+			var id = $(this).attr("href");
+			$(".content_container").hide();
+			$(id).show();			
+	});
+
+});
