@@ -46,6 +46,10 @@
         <script type="text/javascript">
             app.initialize();
         </script>
+        
+        <div id="geo">
+        	<div  id="geo-wrapper">
+        </div>
     	
     	<div data-role="collapsible-set" data-theme="c" data-content-theme="d">
 			<div data-role="collapsible">
