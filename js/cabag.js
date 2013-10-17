@@ -1,5 +1,7 @@
 function lookup_location() {
-  geoPosition.getCurrentPosition(showGeo, showGeoError);
+	if (geoPosition.init()) {
+		geoPosition.getCurrentPosition(showGeo, showGeoError);
+  	}
 }
 
 function showGeo(loc) {
