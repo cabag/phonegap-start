@@ -5,11 +5,20 @@ function lookup_location() {
 }
 
 function showGeo(loc) {
-  $("#geo").html("lat: " + loc.coords.latitude + " long: " + loc.coords.longitude);
+  $("#geo").html("lat: " + loc.coords.latitude + "<br />long: " + loc.coords.longitude);
 }
 
 function showGeoError() {
   $("#geo").html('Unable to determine your location.');
+}
+
+function tilt(x,y) {
+	x = (x == null) ? 0 : Math.floor(x);
+	y = (y == null) ? 0 : Math.floor(y);
+	$("#gyro").html("x: " + x + "<br />y: " + y);
+	var rgb = "rgb(" + (120 + (x * 10)) + "," + (120 + (y * 10)) + ",0)";
+	console.log("rgb: "+rgb);
+	$("#gyro").css({"background-color":rgb});
 }
 
 $( document ).ready(function() {
@@ -18,6 +27,7 @@ $( document ).ready(function() {
 	$("#gyro").hide();
 	
 	lookup_location();
+	tilt();
 	
 	$("#navigation li a").click(function() {
 			//console.log("id: "+$(this).attr("href"));
