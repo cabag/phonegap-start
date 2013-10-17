@@ -17,7 +17,7 @@ function tilt(x,y) {
 	y = (y == null) ? 0 : Math.floor(y);
 	$("#gyro").html("x: " + x + "<br />y: " + y);
 	var rgb = "rgb(" + (120 + (x * 10)) + "," + (120 + (y * 10)) + ",0)";
-	console.log("rgb: "+rgb);
+	//console.log("rgb: "+rgb);
 	$("#gyro").css({"background-color":rgb});
 }
 

@@ -4,6 +4,7 @@
 
 .ui-page ul#navigation li {
 	list-style-type:none;
+	max-height:3em;
 }
 
 .ui-page ul#navigation li a {
@@ -14,4 +15,8 @@
 	padding: 10px 20px;
 	background:black;
 	color:white;
+}
+
+ul#navigation li a.ui-btn span.ui-btn-inner {
+	padding: 0 20px;
 }
